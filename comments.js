@@ -1,9 +1,9 @@
-// create web server
+// Create web server
 const http = require('http');
 const fs = require('fs');
 
 http.createServer((req, res) => {
-  fs.readFile('./comment.html', (err, data) => {
+  fs.readFile('./comments.html', (err, data) => {
     if (err) {
       res.writeHead(404, {'Content-Type': 'text/html'});
       res.end('404 Not Found');
@@ -13,4 +13,5 @@ http.createServer((req, res) => {
     }
   });
 }).listen(8080, () => {
-  console.log('Server running at http://'
+  console.log('Server running at http://localhost:8080/');
+});
